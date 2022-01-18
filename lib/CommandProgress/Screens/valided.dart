@@ -37,6 +37,14 @@ class _CommandeValideState extends State<CommandeValide> {
               padding: const EdgeInsets.all(defaultPadding),
               child: Column(
                 children: [
+                  Text("Vous receverez la validation de votre commande sous peu",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: SideMenuColor1,
+                    fontSize: 16.sp,
+                    fontFamily: "mont"
+                  ),),
+                  SizedBox(height: 16,),
                   RichText(
                     text: TextSpan(
                         text:

@@ -211,7 +211,7 @@ class _PlatMenuState extends State<PlatMenu> {
 
   var cardImage = 'https://source.unsplash.com/random/800x600?foods';
 
-  NetworkImage url(var img) {
+  AssetImage url(var img) {
     return img;
   }
 
@@ -222,9 +222,9 @@ class _PlatMenuState extends State<PlatMenu> {
   int _current = 0;
 
   List<String> images = [
-    'https://source.unsplash.com/random/800x600?foods',
-    'https://source.unsplash.com/random/800x600?foods',
-    'https://source.unsplash.com/random/800x600?foods'
+    "asset/images/thiep1.jpg",
+    "asset/images/thiep2.jpg",
+    "asset/images/thiep3.jpg",
 
     // 'asset/images/plat1.jpg',
     // 'asset/images/plat2.jpg',
@@ -232,7 +232,7 @@ class _PlatMenuState extends State<PlatMenu> {
   ];
 
   final List<String> places = [
-    'ISSU',
+    'THIEBOUDIENE',
     'YASSA ',
     'DOMADA',
   ];
@@ -253,7 +253,7 @@ class _PlatMenuState extends State<PlatMenu> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       image: DecorationImage(
-                        image: NetworkImage(element),
+                        image: AssetImage(element),
                         fit: BoxFit.cover,
                         // colorFilter: ColorFilter.mode(
                         //     Colors.black54, BlendMode.darken)

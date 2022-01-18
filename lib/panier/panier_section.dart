@@ -1,3 +1,4 @@
+import 'package:animate_icons/animate_icons.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -63,6 +64,26 @@ class ShopBody extends StatefulWidget {
 
 class _ShopBodyState extends State<ShopBody> {
   int quantite = 0;
+  AnimateIconController c1;
+
+  bool onEndIconPress(BuildContext context) {
+
+    return true;
+  }
+
+  bool onStartIconPress(BuildContext context) {
+
+    return true;
+  }
+
+
+  @override
+  void initState(){
+    c1 = AnimateIconController();
+    super.initState();
+  }
+
+
 
   Widget placesWidget(String img, String name) {
     return InkWell(
@@ -205,13 +226,16 @@ class _ShopBodyState extends State<ShopBody> {
                       color: SideMenuColor1,
                     ),
                   ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      EvaIcons.heart,
-                      size: 27,
-                      color: SideMenuColor1,
-                    ),
+                  AnimateIcons(
+                    startIcon: (Icons.favorite_border),
+                    endIcon: (EvaIcons.heart),
+                    controller: c1,
+                    size: 30.0,
+                    startIconColor: red,
+                    endIconColor: red,
+                    duration: Duration(milliseconds: 200),
+                    onEndIconPress: () => onEndIconPress(context),
+                    onStartIconPress: () => onStartIconPress(context),
                   ),
                   Row(
                     children: [
@@ -296,110 +320,131 @@ class _ShopBodyState extends State<ShopBody> {
                 color: Colors.blueGrey,
                 thickness: 0.3,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Total (3 éléments)",
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
-                  ),
-                  Icon(
-                    Icons.arrow_drop_down,
-                    color: black,
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "+Taxes",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        color: Colors.grey),
-                  ),
-                  Text(
-                    "\$2.1",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        color: Colors.grey),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "+Delivery Charges",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        color: Colors.grey),
-                  ),
-                  Text(
-                    "\$3.1",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        color: Colors.grey),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Discounts",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        color: Colors.grey),
-                  ),
-                  Text(
-                    "-\$6.1",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        color: Colors.grey),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Prix Total",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 18,
+              Container(
+                decoration: BoxDecoration(
+                  color: Color(0xc6ee4242),
+                  borderRadius: BorderRadius.circular(10)
+                ),
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Total articles (3 éléments)",
+                          style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18,color: white),
+                        ),
+                        Icon(
+                          Icons.arrow_drop_down,
+                          color: white,
+                        )
+                      ],
                     ),
-                  ),
-                  Text(
-                    "\$102",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        color: Colors.orange),
-                  )
-                ],
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "+ Article 1",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          "2000 Fcfa",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.white),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "+ Article 2",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          "2000 Fcfa",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.white),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "+ Article 3",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          "500 Fcfa",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.white),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Divider(
+                      color: white,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Prix Total",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 18,
+                            color: white
+                          ),
+                        ),
+                        Text(
+                          "4500 Fcfa",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18,
+                              color: Colors.white),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ).addNeumorphism(
+                blurRadius: 15,
+                borderRadius: 15,
+                offset: Offset(5, 5),
+                topShadowColor: Colors.white60,
+                bottomShadowColor: Color(0xFF234395).withOpacity(0.5),
               ),
               SizedBox(
                 height: 70,
-              ),
+              )
             ],
           ),
         ),

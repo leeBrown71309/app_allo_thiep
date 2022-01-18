@@ -127,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Globals().isValidated == true ?
                       SlideCountdownSeparated(
-                        duration: const Duration(seconds: 5),
+                        duration: const Duration(minutes: 5),
                         height: 50,
                         width: 50,
                         onDone: (){

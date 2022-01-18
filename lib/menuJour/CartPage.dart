@@ -54,22 +54,12 @@ class _cartPageState extends State<cartPage> {
   }
 
   bool onEndIconPress(BuildContext context) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text("unfavorited"),
-        duration: Duration(seconds: 3),
-      ),
-    );
+
     return true;
   }
 
   bool onStartIconPress(BuildContext context) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text("favorited"),
-        duration: Duration(seconds: 3),
-      ),
-    );
+
     return true;
   }
 
@@ -201,6 +191,7 @@ class _cartPageState extends State<cartPage> {
                                       size: 30.0,
                                       startIconColor: red,
                                       endIconColor: red,
+                                      duration: Duration(milliseconds: 200),
                                       onEndIconPress: () => onEndIconPress(context),
                                       onStartIconPress: () => onStartIconPress(context),
                                     ),

@@ -29,23 +29,19 @@ class _EditAdressState extends State<EditAdress> {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  final TextEditingController _cityTextEditingController =
+  final TextEditingController _adrTextEditingController =
       TextEditingController();
 
-  /// This is list of city which will pass to the drop down.
-  final List<SelectedListItem> _listOfCities = [
-    SelectedListItem(false, kTokyo),
-    SelectedListItem(false, kNewYork),
-    SelectedListItem(false, kLondon),
-    SelectedListItem(false, kParis),
-    SelectedListItem(false, kMadrid),
-    SelectedListItem(false, kDubai),
-    SelectedListItem(false, kRome),
-    SelectedListItem(false, kBarcelona),
-    SelectedListItem(false, kCologne),
-    SelectedListItem(false, kMonteCarlo),
-    SelectedListItem(false, kPuebla),
-    SelectedListItem(false, kFlorence),
+  final List<SelectedListItem> _listOfAdr = [
+    SelectedListItem(false, kFass),
+    SelectedListItem(false, kColobane),
+    SelectedListItem(false, kPetersen),
+    SelectedListItem(false, kUcad),
+    SelectedListItem(false, kPoint_E),
+    SelectedListItem(false, kFan),
+    SelectedListItem(false, kSahm),
+    SelectedListItem(false, kMedina),
+    SelectedListItem(false, KKeurMassar),
   ];
 
   @override
@@ -241,10 +237,10 @@ class _EditAdressState extends State<EditAdress> {
                         child: Padding(
                           padding: const EdgeInsets.only(top: 8.0),
                           child: AppTextField(
-                            textEditingController: _cityTextEditingController,
+                            textEditingController: _adrTextEditingController,
                             hint: "adresse",
                             isCitySelected: true,
-                            cities: _listOfCities,
+                            cities: _listOfAdr,
                           ),
                         ),
                       ),

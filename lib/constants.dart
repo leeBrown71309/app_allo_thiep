@@ -8,18 +8,16 @@ String host = "https://alothiep-food-app.herokuapp.com/";
 String apiJus_get = "http://localhost:8000/api/Jus";
 
 // Cities
-const kTokyo = 'Tokyo';
-const kNewYork = 'New York';
-const kLondon = 'London';
-const kParis = 'Paris';
-const kMadrid = 'Madrid';
-const kDubai = 'Dubai';
-const kRome = 'Rome';
-const kBarcelona = 'Barcelona';
-const kCologne = 'Cologne';
-const kMonteCarlo = 'Monte Carlo';
-const kPuebla = 'Puebla';
-const kFlorence = 'Florence';
+const kFass = 'Fass';
+const kColobane = 'Colobane';
+const kPetersen = 'Petersen';
+const kUcad = 'Ucad';
+const kPoint_E = 'Point_E';
+const kFan = 'Fan';
+const kSahm = 'Sahm';
+const kMedina = 'Médina';
+const KKeurMassar = 'Keur-Massar';
+
 
 // Register Page
 const kRegister = 'Register';
@@ -36,9 +34,9 @@ const kAddYourPassword = 'Add your password';
 const kREGISTER = 'REGISTER';
 
 // Drop Down
-const kDone = 'Done';
-const kSearch = 'Search...';
-const kCities = 'Cities';
+const kDone = 'Fini';
+const kSearch = 'Chercher...';
+const kCities = 'Adresse';
 
 
 
